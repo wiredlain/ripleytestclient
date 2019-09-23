@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { AuthService } from './core/auth.service';
 
-const endpoint = 'http://localhost:8000/api';
+const endpoint = 'https://ripleytestapi.herokuapp.com/api';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
