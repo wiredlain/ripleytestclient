@@ -114,6 +114,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./core/auth.service */ "./src/app/core/auth.service.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _can_activate_via_auth_guard_guard__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./can-activate-via-auth-guard.guard */ "./src/app/can-activate-via-auth-guard.guard.ts");
+/* harmony import */ var _logout_logout_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./logout/logout.component */ "./src/app/logout/logout.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -142,10 +144,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 var appRoutes = [
-    { path: 'home-page', component: _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_7__["HomePageComponent"] },
-    { path: 'products', component: _product_product_component__WEBPACK_IMPORTED_MODULE_9__["ProductComponent"] },
+    { path: 'home-page', component: _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_7__["HomePageComponent"], canActivate: [_can_activate_via_auth_guard_guard__WEBPACK_IMPORTED_MODULE_22__["CanActivateViaAuthGuard"]] },
+    { path: 'products', component: _product_product_component__WEBPACK_IMPORTED_MODULE_9__["ProductComponent"], canActivate: [_can_activate_via_auth_guard_guard__WEBPACK_IMPORTED_MODULE_22__["CanActivateViaAuthGuard"]] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_20__["LoginComponent"] },
+    { path: 'logout', component: _logout_logout_component__WEBPACK_IMPORTED_MODULE_23__["LogoutComponent"], canActivate: [_can_activate_via_auth_guard_guard__WEBPACK_IMPORTED_MODULE_22__["CanActivateViaAuthGuard"]] },
 ];
 Object(_angular_common__WEBPACK_IMPORTED_MODULE_11__["registerLocaleData"])(_angular_common_locales_es_CL__WEBPACK_IMPORTED_MODULE_12___default.a, 'es-CL');
 var AppModule = /** @class */ (function () {
@@ -158,7 +163,8 @@ var AppModule = /** @class */ (function () {
                 _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_7__["HomePageComponent"],
                 _menu_lateral_menu_lateral_component__WEBPACK_IMPORTED_MODULE_8__["MenuLateralComponent"],
                 _product_product_component__WEBPACK_IMPORTED_MODULE_9__["ProductComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_20__["LoginComponent"]
+                _login_login_component__WEBPACK_IMPORTED_MODULE_20__["LoginComponent"],
+                _logout_logout_component__WEBPACK_IMPORTED_MODULE_23__["LogoutComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -183,11 +189,65 @@ var AppModule = /** @class */ (function () {
                 _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_16__["AngularFirestoreModule"],
                 _angular_fire_auth__WEBPACK_IMPORTED_MODULE_17__["AngularFireAuthModule"]
             ],
-            providers: [_core_auth_service__WEBPACK_IMPORTED_MODULE_19__["AuthService"], _core_user_service__WEBPACK_IMPORTED_MODULE_18__["UserService"]],
+            providers: [
+                _core_auth_service__WEBPACK_IMPORTED_MODULE_19__["AuthService"],
+                _core_user_service__WEBPACK_IMPORTED_MODULE_18__["UserService"],
+                _can_activate_via_auth_guard_guard__WEBPACK_IMPORTED_MODULE_22__["CanActivateViaAuthGuard"]
+            ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/can-activate-via-auth-guard.guard.ts":
+/*!******************************************************!*\
+  !*** ./src/app/can-activate-via-auth-guard.guard.ts ***!
+  \******************************************************/
+/*! exports provided: CanActivateViaAuthGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CanActivateViaAuthGuard", function() { return CanActivateViaAuthGuard; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./core/auth.service */ "./src/app/core/auth.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CanActivateViaAuthGuard = /** @class */ (function () {
+    function CanActivateViaAuthGuard(router, authService) {
+        this.router = router;
+        this.authService = authService;
+    }
+    CanActivateViaAuthGuard.prototype.canActivate = function () {
+        // If the user is not logged in we'll send them back to the home page
+        if (!this.authService.isLoggedIn) {
+            console.log('No estás logueado');
+            this.router.navigate(['/login']);
+            return false;
+        }
+        return true;
+    };
+    CanActivateViaAuthGuard = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _core_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
+    ], CanActivateViaAuthGuard);
+    return CanActivateViaAuthGuard;
 }());
 
 
@@ -598,6 +658,53 @@ module.exports = ".header {\n  text-align: center;\n  font-size: 30px;\n  margin
 
 /***/ }),
 
+/***/ "./src/app/logout/logout.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/logout/logout.component.ts ***!
+  \********************************************/
+/*! exports provided: LogoutComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogoutComponent", function() { return LogoutComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/core/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var LogoutComponent = /** @class */ (function () {
+    function LogoutComponent(_authService, router) {
+        this._authService = _authService;
+        this.router = router;
+    }
+    LogoutComponent.prototype.ngOnInit = function () {
+        this._authService.doLogout();
+        this.router.navigate(['login']);
+    };
+    LogoutComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            template: ''
+        }),
+        __metadata("design:paramtypes", [_core_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], LogoutComponent);
+    return LogoutComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/menu-lateral/menu-lateral.component.css":
 /*!*********************************************************!*\
   !*** ./src/app/menu-lateral/menu-lateral.component.css ***!
@@ -616,7 +723,7 @@ module.exports = ".sidenav-container {\n  height: 100%;\n}\n\n.sidenav {\n  widt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"sidenav-container\">\n  <mat-sidenav\n    #drawer\n    class=\"sidenav\"\n    fixedInViewport=\"true\"\n    [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\n    [opened]=\"!(isHandset$ | async)\">\n    <mat-toolbar color=\"primary\">Menu</mat-toolbar>\n    <mat-nav-list>\n      <a mat-list-item routerLink=\"/home-page\">HomePage</a>\n      <a mat-list-item routerLink=\"/products\">Productos</a>\n      <a mat-list-item routerLink=\"/login\">Login</a>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <mat-toolbar color=\"primary\">\n      <button\n        type=\"button\"\n        aria-label=\"Toggle sidenav\"\n        mat-icon-button\n        (click)=\"drawer.toggle()\"\n        *ngIf=\"isHandset$ | async\">\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\n      </button>\n      <span>Listado de Productos</span>\n    </mat-toolbar>\n    <router-outlet></router-outlet>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
+module.exports = "<mat-sidenav-container class=\"sidenav-container\">\n  <mat-sidenav\n    #drawer\n    class=\"sidenav\"\n    fixedInViewport=\"true\"\n    [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\n    [opened]=\"!(isHandset$ | async)\">\n    <mat-toolbar color=\"primary\">Menu</mat-toolbar>\n    <mat-nav-list>\n      <a mat-list-item routerLink=\"/home-page\">HomePage</a>\n      <a mat-list-item routerLink=\"/products\">Productos</a>\n      <a mat-list-item routerLink=\"/login\" *ngIf=\"!authService.isLoggedIn\">\n        Login\n      </a>\n      <a mat-list-item routerLink=\"/logout\" *ngIf=\"authService.isLoggedIn\">\n        Logout\n      </a>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <mat-toolbar color=\"primary\">\n      <button\n        type=\"button\"\n        aria-label=\"Toggle sidenav\"\n        mat-icon-button\n        (click)=\"drawer.toggle()\"\n        *ngIf=\"isHandset$ | async\">\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\n      </button>\n      <span>Listado de Productos</span>\n    </mat-toolbar>\n    <router-outlet></router-outlet>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
 
 /***/ }),
 
@@ -633,6 +740,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/core/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -645,9 +753,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var MenuLateralComponent = /** @class */ (function () {
-    function MenuLateralComponent(breakpointObserver) {
+    function MenuLateralComponent(breakpointObserver, authService) {
         this.breakpointObserver = breakpointObserver;
+        this.authService = authService;
         this.isHandset$ = this.breakpointObserver.observe(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__["Breakpoints"].Handset)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (result) { return result.matches; }));
     }
@@ -657,7 +767,7 @@ var MenuLateralComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./menu-lateral.component.html */ "./src/app/menu-lateral/menu-lateral.component.html"),
             styles: [__webpack_require__(/*! ./menu-lateral.component.css */ "./src/app/menu-lateral/menu-lateral.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__["BreakpointObserver"]])
+        __metadata("design:paramtypes", [_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__["BreakpointObserver"], _core_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
     ], MenuLateralComponent);
     return MenuLateralComponent;
 }());

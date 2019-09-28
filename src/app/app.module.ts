@@ -21,13 +21,16 @@ import { UserService } from './core/user.service';
 import { AuthService } from './core/auth.service';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CanActivateViaAuthGuard } from './can-activate-via-auth-guard.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
 const appRoutes: Routes = [
-  { path: 'home-page', component: HomePageComponent },
-  { path: 'products', component: ProductComponent },
+  { path: 'home-page', component: HomePageComponent, canActivate: [CanActivateViaAuthGuard] },
+  { path: 'products', component: ProductComponent , canActivate: [CanActivateViaAuthGuard]},
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent , canActivate: [CanActivateViaAuthGuard]},
 ];
 registerLocaleData(localeCLP, 'es-CL');
 
@@ -37,7 +40,8 @@ registerLocaleData(localeCLP, 'es-CL');
     HomePageComponent,
     MenuLateralComponent,
     ProductComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,11 @@ registerLocaleData(localeCLP, 'es-CL');
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule
   ],
-  providers: [AuthService, UserService],
+  providers: [
+    AuthService, 
+    UserService,
+    CanActivateViaAuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,7 +10,12 @@
     <mat-nav-list>
       <a mat-list-item routerLink="/home-page">HomePage</a>
       <a mat-list-item routerLink="/products">Productos</a>
-      <a mat-list-item routerLink="/login">Login</a>
+      <a mat-list-item routerLink="/login" *ngIf="!authService.isLoggedIn">
+        Login
+      </a>
+      <a mat-list-item routerLink="/logout" *ngIf="authService.isLoggedIn">
+        Logout
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
