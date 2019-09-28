@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AuthService } from '../core/auth.service';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'app-menu-lateral',

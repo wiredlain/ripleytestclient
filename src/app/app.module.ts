@@ -1,15 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
-import { HomePageComponent } from './home-page/home-page.component';
-import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
-import { ProductComponent } from './product/product.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
+import { ProductComponent } from './components/product/product.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeCLP from '@angular/common/locales/es-CL';
 import { DeviceDetectorModule } from 'ngx-device-detector';
@@ -19,10 +20,13 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { UserService } from './core/user.service';
 import { AuthService } from './core/auth.service';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CanActivateViaAuthGuard } from './can-activate-via-auth-guard.guard';
-import { LogoutComponent } from './logout/logout.component';
+import { CanActivateViaAuthGuard } from './core/can-activate-via-auth.guard';
+import { LogoutComponent } from './components/logout/logout.component';
+import { LoaderComponent } from './components/shared/loader/loader.component';
+import { LoaderService } from './services/loader.service';
+import { LoaderInterceptor } from './core/loader-interceptor';
 
 
 
@@ -41,7 +45,8 @@ registerLocaleData(localeCLP, 'es-CL');
     MenuLateralComponent,
     ProductComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -64,12 +69,15 @@ registerLocaleData(localeCLP, 'es-CL');
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     AuthService, 
     UserService,
-    CanActivateViaAuthGuard
+    CanActivateViaAuthGuard,
+    LoaderService,
+    //{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
