@@ -49,26 +49,25 @@ module.exports = "<app-loader></app-loader>\n<app-menu-lateral></app-menu-latera
 /*!**********************************!*\
   !*** ./src/app/app.component.ts ***!
   \**********************************/
-/*! exports provided: AppComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'client';
     }
     AppComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        core_1.Component({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
@@ -76,7 +75,7 @@ var AppComponent = /** @class */ (function () {
     ], AppComponent);
     return AppComponent;
 }());
-
+exports.AppComponent = AppComponent;
 
 
 /***/ }),
@@ -85,130 +84,103 @@ var AppComponent = /** @class */ (function () {
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
-/*! exports provided: AppModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/progress-spinner */ "./node_modules/@angular/material/esm5/progress-spinner.es5.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _components_home_page_home_page_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/home-page/home-page.component */ "./src/app/components/home-page/home-page.component.ts");
-/* harmony import */ var _components_menu_lateral_menu_lateral_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/menu-lateral/menu-lateral.component */ "./src/app/components/menu-lateral/menu-lateral.component.ts");
-/* harmony import */ var _components_product_product_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/product/product.component */ "./src/app/components/product/product.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_common_locales_es_CL__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/locales/es-CL */ "./node_modules/@angular/common/locales/es-CL.js");
-/* harmony import */ var _angular_common_locales_es_CL__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_angular_common_locales_es_CL__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var ngx_device_detector__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-device-detector */ "./node_modules/ngx-device-detector/fesm5/ngx-device-detector.js");
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
-/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
-/* harmony import */ var _core_user_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./core/user.service */ "./src/app/core/user.service.ts");
-/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./core/auth.service */ "./src/app/core/auth.service.ts");
-/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _core_can_activate_via_auth_guard__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./core/can-activate-via-auth.guard */ "./src/app/core/can-activate-via-auth.guard.ts");
-/* harmony import */ var _components_logout_logout_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/logout/logout.component */ "./src/app/components/logout/logout.component.ts");
-/* harmony import */ var _components_shared_loader_loader_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/shared/loader/loader.component */ "./src/app/components/shared/loader/loader.component.ts");
-/* harmony import */ var _services_loader_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./services/loader.service */ "./src/app/services/loader.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var progress_spinner_1 = __webpack_require__(/*! @angular/material/progress-spinner */ "./node_modules/@angular/material/esm5/progress-spinner.es5.js");
+var app_component_1 = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+var animations_1 = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+var layout_1 = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
+var material_1 = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+var home_page_component_1 = __webpack_require__(/*! ./components/home-page/home-page.component */ "./src/app/components/home-page/home-page.component.ts");
+var menu_lateral_component_1 = __webpack_require__(/*! ./components/menu-lateral/menu-lateral.component */ "./src/app/components/menu-lateral/menu-lateral.component.ts");
+var product_component_1 = __webpack_require__(/*! ./components/product/product.component */ "./src/app/components/product/product.component.ts");
+var http_1 = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var common_1 = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+var es_CL_1 = __webpack_require__(/*! @angular/common/locales/es-CL */ "./node_modules/@angular/common/locales/es-CL.js");
+var ngx_device_detector_1 = __webpack_require__(/*! ngx-device-detector */ "./node_modules/ngx-device-detector/fesm5/ngx-device-detector.js");
+var environment_1 = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+var fire_1 = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
+var firestore_1 = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+var auth_1 = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+var user_service_1 = __webpack_require__(/*! ./core/user.service */ "./src/app/core/user.service.ts");
+var auth_service_1 = __webpack_require__(/*! ./core/auth.service */ "./src/app/core/auth.service.ts");
+var login_component_1 = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
+var forms_1 = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+var can_activate_via_auth_guard_1 = __webpack_require__(/*! ./core/can-activate-via-auth.guard */ "./src/app/core/can-activate-via-auth.guard.ts");
+var logout_component_1 = __webpack_require__(/*! ./components/logout/logout.component */ "./src/app/components/logout/logout.component.ts");
+var loader_component_1 = __webpack_require__(/*! ./components/shared/loader/loader.component */ "./src/app/components/shared/loader/loader.component.ts");
+var loader_service_1 = __webpack_require__(/*! ./services/loader.service */ "./src/app/services/loader.service.ts");
 var appRoutes = [
-    { path: 'home-page', component: _components_home_page_home_page_component__WEBPACK_IMPORTED_MODULE_8__["HomePageComponent"], canActivate: [_core_can_activate_via_auth_guard__WEBPACK_IMPORTED_MODULE_23__["CanActivateViaAuthGuard"]] },
-    { path: 'products', component: _components_product_product_component__WEBPACK_IMPORTED_MODULE_10__["ProductComponent"], canActivate: [_core_can_activate_via_auth_guard__WEBPACK_IMPORTED_MODULE_23__["CanActivateViaAuthGuard"]] },
-    { path: 'login', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_21__["LoginComponent"] },
-    { path: 'logout', component: _components_logout_logout_component__WEBPACK_IMPORTED_MODULE_24__["LogoutComponent"], canActivate: [_core_can_activate_via_auth_guard__WEBPACK_IMPORTED_MODULE_23__["CanActivateViaAuthGuard"]] },
+    { path: '', redirectTo: '/home-page', pathMatch: 'full' },
+    { path: 'home-page', component: home_page_component_1.HomePageComponent, canActivate: [can_activate_via_auth_guard_1.CanActivateViaAuthGuard] },
+    { path: 'products', component: product_component_1.ProductComponent, canActivate: [can_activate_via_auth_guard_1.CanActivateViaAuthGuard] },
+    { path: 'login', component: login_component_1.LoginComponent },
+    { path: 'logout', component: logout_component_1.LogoutComponent, canActivate: [can_activate_via_auth_guard_1.CanActivateViaAuthGuard] },
 ];
-Object(_angular_common__WEBPACK_IMPORTED_MODULE_12__["registerLocaleData"])(_angular_common_locales_es_CL__WEBPACK_IMPORTED_MODULE_13___default.a, 'es-CL');
+common_1.registerLocaleData(es_CL_1.default, 'es-CL');
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        core_1.NgModule({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                _components_home_page_home_page_component__WEBPACK_IMPORTED_MODULE_8__["HomePageComponent"],
-                _components_menu_lateral_menu_lateral_component__WEBPACK_IMPORTED_MODULE_9__["MenuLateralComponent"],
-                _components_product_product_component__WEBPACK_IMPORTED_MODULE_10__["ProductComponent"],
-                _components_login_login_component__WEBPACK_IMPORTED_MODULE_21__["LoginComponent"],
-                _components_logout_logout_component__WEBPACK_IMPORTED_MODULE_24__["LogoutComponent"],
-                _components_shared_loader_loader_component__WEBPACK_IMPORTED_MODULE_25__["LoaderComponent"]
+                app_component_1.AppComponent,
+                home_page_component_1.HomePageComponent,
+                menu_lateral_component_1.MenuLateralComponent,
+                product_component_1.ProductComponent,
+                login_component_1.LoginComponent,
+                logout_component_1.LogoutComponent,
+                loader_component_1.LoaderComponent
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_22__["ReactiveFormsModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
-                _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_6__["LayoutModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSidenavModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatGridListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatCardModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatMenuModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatPaginatorModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSortModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(appRoutes),
-                ngx_device_detector__WEBPACK_IMPORTED_MODULE_14__["DeviceDetectorModule"].forRoot(),
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientModule"],
-                _angular_fire__WEBPACK_IMPORTED_MODULE_16__["AngularFireModule"].initializeApp(src_environments_environment__WEBPACK_IMPORTED_MODULE_15__["environment"].firebase),
-                _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_17__["AngularFirestoreModule"],
-                _angular_fire_auth__WEBPACK_IMPORTED_MODULE_18__["AngularFireAuthModule"],
-                _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_3__["MatProgressSpinnerModule"]
+                platform_browser_1.BrowserModule,
+                forms_1.ReactiveFormsModule,
+                animations_1.BrowserAnimationsModule,
+                layout_1.LayoutModule,
+                material_1.MatToolbarModule,
+                material_1.MatButtonModule,
+                material_1.MatSidenavModule,
+                material_1.MatIconModule,
+                material_1.MatListModule,
+                material_1.MatGridListModule,
+                material_1.MatCardModule,
+                material_1.MatMenuModule,
+                material_1.MatTableModule,
+                material_1.MatPaginatorModule,
+                material_1.MatSortModule,
+                router_1.RouterModule.forRoot(appRoutes),
+                ngx_device_detector_1.DeviceDetectorModule.forRoot(),
+                http_1.HttpClientModule,
+                fire_1.AngularFireModule.initializeApp(environment_1.environment.firebase),
+                firestore_1.AngularFirestoreModule,
+                auth_1.AngularFireAuthModule,
+                progress_spinner_1.MatProgressSpinnerModule
             ],
             providers: [
-                _core_auth_service__WEBPACK_IMPORTED_MODULE_20__["AuthService"],
-                _core_user_service__WEBPACK_IMPORTED_MODULE_19__["UserService"],
-                _core_can_activate_via_auth_guard__WEBPACK_IMPORTED_MODULE_23__["CanActivateViaAuthGuard"],
-                _services_loader_service__WEBPACK_IMPORTED_MODULE_26__["LoaderService"],
+                auth_service_1.AuthService,
+                user_service_1.UserService,
+                can_activate_via_auth_guard_1.CanActivateViaAuthGuard,
+                loader_service_1.LoaderService,
             ],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+            bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
     return AppModule;
 }());
-
+exports.AppModule = AppModule;
 
 
 /***/ }),
@@ -231,7 +203,7 @@ module.exports = ".example-card {\n  max-width: 400px;\n}\n.example-header-image
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card class=\"example-card\">\n  <mat-card-header>\n    <div mat-card-avatar class=\"example-header-image\"></div>\n    <mat-card-title>Shiba Inu</mat-card-title>\n    <mat-card-subtitle>Dog Breed</mat-card-subtitle>\n  </mat-card-header>\n  <img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">\n  <mat-card-content>\n    <p>\n      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.\n      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally\n      bred for hunting.\n    </p>\n  </mat-card-content>\n  <mat-card-actions>\n    <button mat-button>LIKE</button>\n    <button mat-button>SHARE</button>\n  </mat-card-actions>\n</mat-card>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h1>Readme</h1>\n      <p>Tanto la API cómo el cliente ya están optimizados para hacer deploy en HEROKU, sólo se debe clonar el repo e iniciar el deploy.</p>\n      <p>\n        Se debe configurar la URL de la API, además de la configuración de firebase en las variables de HEROKU, con eso debería bastar\n        para lograr correr los sistemas.\n      </p>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -239,30 +211,29 @@ module.exports = "<mat-card class=\"example-card\">\n  <mat-card-header>\n    <d
 /*!*************************************************************!*\
   !*** ./src/app/components/home-page/home-page.component.ts ***!
   \*************************************************************/
-/*! exports provided: HomePageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageComponent", function() { return HomePageComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var HomePageComponent = /** @class */ (function () {
     function HomePageComponent() {
     }
     HomePageComponent.prototype.ngOnInit = function () {
     };
     HomePageComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        core_1.Component({
             selector: 'app-home-page',
             template: __webpack_require__(/*! ./home-page.component.html */ "./src/app/components/home-page/home-page.component.html"),
             styles: [__webpack_require__(/*! ./home-page.component.css */ "./src/app/components/home-page/home-page.component.css")]
@@ -271,7 +242,7 @@ var HomePageComponent = /** @class */ (function () {
     ], HomePageComponent);
     return HomePageComponent;
 }());
-
+exports.HomePageComponent = HomePageComponent;
 
 
 /***/ }),
@@ -291,29 +262,25 @@ module.exports = "<h1 class=\"header\">Login with Firebase or Social Providers</
 /*!*****************************************************!*\
   !*** ./src/app/components/login/login.component.ts ***!
   \*****************************************************/
-/*! exports provided: LoginComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core/auth.service */ "./src/app/core/auth.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var auth_service_1 = __webpack_require__(/*! ../../core/auth.service */ "./src/app/core/auth.service.ts");
+var router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var forms_1 = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var LoginComponent = /** @class */ (function () {
     function LoginComponent(authService, router, fb) {
         this.authService = authService;
@@ -324,8 +291,8 @@ var LoginComponent = /** @class */ (function () {
     }
     LoginComponent.prototype.createForm = function () {
         this.loginForm = this.fb.group({
-            email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+            email: ['', forms_1.Validators.required],
+            password: ['', forms_1.Validators.required]
         });
     };
     LoginComponent.prototype.tryFacebookLogin = function () {
@@ -360,18 +327,18 @@ var LoginComponent = /** @class */ (function () {
         });
     };
     LoginComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        core_1.Component({
             selector: 'page-login',
             template: __webpack_require__(/*! ./login.component.html */ "./src/app/components/login/login.component.html"),
             styles: [__webpack_require__(/*! ./login.scss */ "./src/app/components/login/login.scss")]
         }),
-        __metadata("design:paramtypes", [_core_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
+        __metadata("design:paramtypes", [auth_service_1.AuthService,
+            router_1.Router,
+            forms_1.FormBuilder])
     ], LoginComponent);
     return LoginComponent;
 }());
-
+exports.LoginComponent = LoginComponent;
 
 
 /***/ }),
@@ -391,27 +358,24 @@ module.exports = ".header {\n  text-align: center;\n  font-size: 30px;\n  margin
 /*!*******************************************************!*\
   !*** ./src/app/components/logout/logout.component.ts ***!
   \*******************************************************/
-/*! exports provided: LogoutComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogoutComponent", function() { return LogoutComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core/auth.service */ "./src/app/core/auth.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var auth_service_1 = __webpack_require__(/*! ../../core/auth.service */ "./src/app/core/auth.service.ts");
+var router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var LogoutComponent = /** @class */ (function () {
     function LogoutComponent(_authService, router) {
         this._authService = _authService;
@@ -422,14 +386,14 @@ var LogoutComponent = /** @class */ (function () {
         this.router.navigate(['login']);
     };
     LogoutComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        core_1.Component({
             template: ''
         }),
-        __metadata("design:paramtypes", [_core_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+        __metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router])
     ], LogoutComponent);
     return LogoutComponent;
 }());
-
+exports.LogoutComponent = LogoutComponent;
 
 
 /***/ }),
@@ -460,37 +424,33 @@ module.exports = "<mat-sidenav-container class=\"sidenav-container\">\n  <mat-si
 /*!*******************************************************************!*\
   !*** ./src/app/components/menu-lateral/menu-lateral.component.ts ***!
   \*******************************************************************/
-/*! exports provided: MenuLateralComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuLateralComponent", function() { return MenuLateralComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../core/auth.service */ "./src/app/core/auth.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var layout_1 = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
+var operators_1 = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+var auth_service_1 = __webpack_require__(/*! ../../core/auth.service */ "./src/app/core/auth.service.ts");
 var MenuLateralComponent = /** @class */ (function () {
     function MenuLateralComponent(breakpointObserver, authService, cdRef) {
         this.breakpointObserver = breakpointObserver;
         this.authService = authService;
         this.cdRef = cdRef;
         this.isLogged = false;
-        this.isHandset$ = this.breakpointObserver.observe(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__["Breakpoints"].Handset)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (result) { return result.matches; }));
+        this.isHandset$ = this.breakpointObserver.observe(layout_1.Breakpoints.Handset)
+            .pipe(operators_1.map(function (result) { return result.matches; }));
         this.isLogged = this.authService.isLoggedIn;
         console.log(this.isLogged);
     }
@@ -502,16 +462,16 @@ var MenuLateralComponent = /** @class */ (function () {
         //this.cdRef.detectChanges();
     };
     MenuLateralComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        core_1.Component({
             selector: 'app-menu-lateral',
             template: __webpack_require__(/*! ./menu-lateral.component.html */ "./src/app/components/menu-lateral/menu-lateral.component.html"),
             styles: [__webpack_require__(/*! ./menu-lateral.component.css */ "./src/app/components/menu-lateral/menu-lateral.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__["BreakpointObserver"], _core_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]])
+        __metadata("design:paramtypes", [layout_1.BreakpointObserver, auth_service_1.AuthService, core_1.ChangeDetectorRef])
     ], MenuLateralComponent);
     return MenuLateralComponent;
 }());
-
+exports.MenuLateralComponent = MenuLateralComponent;
 
 
 /***/ }),
@@ -542,33 +502,27 @@ module.exports = "<h2>Listado de Productos</h2>\n<div class=\"container\">\n  <m
 /*!*********************************************************!*\
   !*** ./src/app/components/product/product.component.ts ***!
   \*********************************************************/
-/*! exports provided: ProductComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductComponent", function() { return ProductComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_products_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/products.service */ "./src/app/services/products.service.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var src_app_services_loader_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/loader.service */ "./src/app/services/loader.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var products_service_1 = __webpack_require__(/*! ../../services/products.service */ "./src/app/services/products.service.ts");
+var operators_1 = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+var rxjs_1 = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var loader_service_1 = __webpack_require__(/*! src/app/services/loader.service */ "./src/app/services/loader.service.ts");
 var ProductComponent = /** @class */ (function () {
     function ProductComponent(rest, route, router, loaderService) {
         this.rest = rest;
@@ -585,8 +539,8 @@ var ProductComponent = /** @class */ (function () {
         this.products = [];
         this.loaderService.show();
         this.rest.getProducts(['mpm00003017074', '2000366985872p', 'mpm00001338695', '2000375925838p', '2000374667876p', '2000374782241p'])
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["retryWhen"])(function (_) {
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["interval"])(5000);
+            .pipe(operators_1.retryWhen(function (_) {
+            return rxjs_1.interval(5000);
         }))
             .subscribe(function (data) {
             _this.loaderService.hide();
@@ -597,16 +551,16 @@ var ProductComponent = /** @class */ (function () {
         this.router.navigate(["/view-product/" + sku]);
     };
     ProductComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        core_1.Component({
             selector: 'app-product',
             template: __webpack_require__(/*! ./product.component.html */ "./src/app/components/product/product.component.html"),
             styles: [__webpack_require__(/*! ./product.component.css */ "./src/app/components/product/product.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_products_service__WEBPACK_IMPORTED_MODULE_2__["ProductsService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], src_app_services_loader_service__WEBPACK_IMPORTED_MODULE_5__["LoaderService"]])
+        __metadata("design:paramtypes", [products_service_1.ProductsService, router_1.ActivatedRoute, router_1.Router, loader_service_1.LoaderService])
     ], ProductComponent);
     return ProductComponent;
 }());
-
+exports.ProductComponent = ProductComponent;
 
 
 /***/ }),
@@ -637,25 +591,23 @@ module.exports = "<div *ngIf=\"isLoading | async\" class=\"overlay\">\n  <mat-pr
 /*!**************************************************************!*\
   !*** ./src/app/components/shared/loader/loader.component.ts ***!
   \**************************************************************/
-/*! exports provided: LoaderComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoaderComponent", function() { return LoaderComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_loader_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/loader.service */ "./src/app/services/loader.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var loader_service_1 = __webpack_require__(/*! ../../../services/loader.service */ "./src/app/services/loader.service.ts");
 var LoaderComponent = /** @class */ (function () {
     function LoaderComponent(loaderService) {
         this.loaderService = loaderService;
@@ -665,16 +617,16 @@ var LoaderComponent = /** @class */ (function () {
         this.isLoading = this.loaderService.isLoading;
     }
     LoaderComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        core_1.Component({
             selector: 'app-loader',
             template: __webpack_require__(/*! ./loader.component.html */ "./src/app/components/shared/loader/loader.component.html"),
             styles: [__webpack_require__(/*! ./loader.component.css */ "./src/app/components/shared/loader/loader.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_loader_service__WEBPACK_IMPORTED_MODULE_1__["LoaderService"]])
+        __metadata("design:paramtypes", [loader_service_1.LoaderService])
     ], LoaderComponent);
     return LoaderComponent;
 }());
-
+exports.LoaderComponent = LoaderComponent;
 
 
 /***/ }),
@@ -683,32 +635,26 @@ var LoaderComponent = /** @class */ (function () {
 /*!**************************************!*\
   !*** ./src/app/core/auth.service.ts ***!
   \**************************************/
-/*! exports provided: AuthService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var auth_1 = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+var firebase = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
+var router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var firestore_1 = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
 var AuthService = /** @class */ (function () {
     function AuthService(afAuth, // Inject Firebase auth service
     router, ngZone, // NgZone service to remove outside scope warning,
@@ -734,7 +680,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.doFacebookLogin = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"].FacebookAuthProvider();
+            var provider = new firebase.auth.FacebookAuthProvider();
             _this.afAuth.auth
                 .signInWithPopup(provider)
                 .then(function (res) {
@@ -748,7 +694,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.doTwitterLogin = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"].TwitterAuthProvider();
+            var provider = new firebase.auth.TwitterAuthProvider();
             _this.afAuth.auth
                 .signInWithPopup(provider)
                 .then(function (res) {
@@ -762,7 +708,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.doGoogleLogin = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"].GoogleAuthProvider();
+            var provider = new firebase.auth.GoogleAuthProvider();
             provider.addScope('profile');
             provider.addScope('email');
             _this.afAuth.auth
@@ -777,7 +723,7 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.doRegister = function (value) {
         return new Promise(function (resolve, reject) {
-            firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().createUserWithEmailAndPassword(value.email, value.password)
+            firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
                 .then(function (res) {
                 resolve(res);
             }, function (err) { return reject(err); });
@@ -786,7 +732,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.doLogin = function (value) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().signInWithEmailAndPassword(value.email, value.password)
+            firebase.auth().signInWithEmailAndPassword(value.email, value.password)
                 .then(function (res) {
                 _this.SetUserData(res.user);
                 resolve(res);
@@ -796,7 +742,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.doLogout = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            if (firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().currentUser) {
+            if (firebase.auth().currentUser) {
                 localStorage.removeItem('user');
                 _this.afAuth.auth.signOut();
                 resolve();
@@ -828,15 +774,15 @@ var AuthService = /** @class */ (function () {
         });
     };
     AuthService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"],
-            _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [auth_1.AngularFireAuth,
+            router_1.Router,
+            core_1.NgZone,
+            firestore_1.AngularFirestore])
     ], AuthService);
     return AuthService;
 }());
-
+exports.AuthService = AuthService;
 
 
 /***/ }),
@@ -845,27 +791,24 @@ var AuthService = /** @class */ (function () {
 /*!*****************************************************!*\
   !*** ./src/app/core/can-activate-via-auth.guard.ts ***!
   \*****************************************************/
-/*! exports provided: CanActivateViaAuthGuard */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CanActivateViaAuthGuard", function() { return CanActivateViaAuthGuard; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth.service */ "./src/app/core/auth.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var auth_service_1 = __webpack_require__(/*! ./auth.service */ "./src/app/core/auth.service.ts");
 var CanActivateViaAuthGuard = /** @class */ (function () {
     function CanActivateViaAuthGuard(router, authService) {
         this.router = router;
@@ -878,15 +821,19 @@ var CanActivateViaAuthGuard = /** @class */ (function () {
             this.router.navigate(['/login']);
             return false;
         }
+        else {
+            console.log(this.router.url);
+            //if (this.router.url)
+        }
         return true;
     };
     CanActivateViaAuthGuard = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [router_1.Router, auth_service_1.AuthService])
     ], CanActivateViaAuthGuard);
     return CanActivateViaAuthGuard;
 }());
-
+exports.CanActivateViaAuthGuard = CanActivateViaAuthGuard;
 
 
 /***/ }),
@@ -895,30 +842,25 @@ var CanActivateViaAuthGuard = /** @class */ (function () {
 /*!**************************************!*\
   !*** ./src/app/core/user.service.ts ***!
   \**************************************/
-/*! exports provided: UserService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_3__);
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var firestore_1 = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+var auth_1 = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+var firebase = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
 var UserService = /** @class */ (function () {
     function UserService(db, afAuth) {
         this.db = db;
@@ -926,7 +868,7 @@ var UserService = /** @class */ (function () {
     }
     UserService.prototype.getCurrentUser = function () {
         return new Promise(function (resolve, reject) {
-            firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().onAuthStateChanged(function (user) {
+            firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
                     resolve(user);
                 }
@@ -938,7 +880,7 @@ var UserService = /** @class */ (function () {
     };
     UserService.prototype.updateCurrentUser = function (value) {
         return new Promise(function (resolve, reject) {
-            var user = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
+            var user = firebase.auth().currentUser;
             user.updateProfile({
                 displayName: value.name,
                 photoURL: user.photoURL
@@ -948,13 +890,13 @@ var UserService = /** @class */ (function () {
         });
     };
     UserService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"],
-            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [firestore_1.AngularFirestore,
+            auth_1.AngularFireAuth])
     ], UserService);
     return UserService;
 }());
-
+exports.UserService = UserService;
 
 
 /***/ }),
@@ -963,25 +905,23 @@ var UserService = /** @class */ (function () {
 /*!********************************************!*\
   !*** ./src/app/services/loader.service.ts ***!
   \********************************************/
-/*! exports provided: LoaderService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoaderService", function() { return LoaderService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var rxjs_1 = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var LoaderService = /** @class */ (function () {
     function LoaderService() {
-        this.isLoading = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        this.isLoading = new rxjs_1.Subject();
     }
     LoaderService.prototype.show = function () {
         this.isLoading.next(true);
@@ -990,11 +930,11 @@ var LoaderService = /** @class */ (function () {
         this.isLoading.next(false);
     };
     LoaderService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
+        core_1.Injectable()
     ], LoaderService);
     return LoaderService;
 }());
-
+exports.LoaderService = LoaderService;
 
 
 /***/ }),
@@ -1003,32 +943,28 @@ var LoaderService = /** @class */ (function () {
 /*!**********************************************!*\
   !*** ./src/app/services/products.service.ts ***!
   \**********************************************/
-/*! exports provided: ProductsService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductsService", function() { return ProductsService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _core_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/auth.service */ "./src/app/core/auth.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-var endpoint = 'https://ripleytestapi.herokuapp.com/api';
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var http_1 = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var operators_1 = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+var auth_service_1 = __webpack_require__(/*! ../core/auth.service */ "./src/app/core/auth.service.ts");
+var environment_1 = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 var httpOptions = {
-    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+    headers: new http_1.HttpHeaders({
         'Content-Type': 'application/json'
     })
 };
@@ -1043,29 +979,29 @@ var ProductsService = /** @class */ (function () {
     };
     ProductsService.prototype.getProducts = function (skus) {
         var token = '';
-        var products_url = endpoint + "/products/" + skus;
+        var products_url = environment_1.environment.apiUrl + "/products/" + skus;
         if (this.authService.isLoggedIn) {
             var user = JSON.parse(localStorage.getItem('user'));
             //console.log(user);
             token = user.stsTokenManager.accessToken;
-            var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]();
+            var headers = new http_1.HttpHeaders();
             httpOptions.headers = headers.append('FIREBASE_AUTH_TOKEN', token);
             console.log(httpOptions);
         }
-        return this.http.get(products_url, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(this.extractData));
+        return this.http.get(products_url, httpOptions).pipe(operators_1.map(this.extractData));
     };
     ProductsService.prototype.getProductBySku = function (sku) {
-        return this.http.get(endpoint + "/products/by-id/" + sku).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(this.extractData));
+        return this.http.get(environment_1.environment.apiUrl + "/products/by-id/" + sku).pipe(operators_1.map(this.extractData));
     };
     ProductsService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+        core_1.Injectable({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _core_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
+        __metadata("design:paramtypes", [http_1.HttpClient, auth_service_1.AuthService])
     ], ProductsService);
     return ProductsService;
 }());
-
+exports.ProductsService = ProductsService;
 
 
 /***/ }),
@@ -1074,34 +1010,25 @@ var ProductsService = /** @class */ (function () {
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
   \*****************************************/
-/*! exports provided: environment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-var environment = {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.environment = {
     production: false,
+    hmr: false,
+    apiUrl: 'http://localhost:8000/api',
     firebase: {
-        apiKey: "AIzaSyA5s1Xi5fYf4Sg4ROgh39xTc1X9JNK-0e0",
-        authDomain: "pruebaripley-80533.firebaseapp.com",
-        databaseURL: "https://pruebaripley-80533.firebaseio.com",
-        projectId: "pruebaripley-80533",
-        storageBucket: "pruebaripley-80533.appspot.com",
-        messagingSenderId: "113502942852"
+        apiKey: 'AIzaSyA5s1Xi5fYf4Sg4ROgh39xTc1X9JNK-0e0',
+        authDomain: 'pruebaripley-80533.firebaseapp.com',
+        databaseURL: 'https://pruebaripley-80533.firebaseio.com',
+        projectId: 'pruebaripley-80533',
+        storageBucket: 'pruebaripley-80533.appspot.com',
+        messagingSenderId: '113502942852',
     }
 };
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
@@ -1110,23 +1037,20 @@ var environment = {
 /*!*********************!*\
   !*** ./src/main.ts ***!
   \*********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 
-
-
-
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var platform_browser_dynamic_1 = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
+var app_module_1 = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+var environment_1 = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+if (environment_1.environment.production) {
+    core_1.enableProdMode();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule)
     .catch(function (err) { return console.error(err); });
 
 

@@ -54,7 +54,7 @@ export class LoginComponent {
     .then(res => {
       this.router.navigate(['/products']);
     }, err => {
-      console.log(err);
+      //console.log(err);
       this.errorMessage = err.message;
     })
   }

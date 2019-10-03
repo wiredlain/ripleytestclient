@@ -5691,15 +5691,11 @@ Zone.__load_patch('PromiseRejectionEvent', function (global, Zone) {
 /*!**************************!*\
   !*** ./src/polyfills.ts ***!
   \**************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_es7_reflect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/es7/reflect */ "./node_modules/core-js/es7/reflect.js");
-/* harmony import */ var core_js_es7_reflect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_es7_reflect__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js/dist/zone */ "./node_modules/zone.js/dist/zone.js");
-/* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_1__);
+
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
@@ -5715,6 +5711,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * Learn more in https://angular.io/docs/ts/latest/guide/browser-support.html
  */
+Object.defineProperty(exports, "__esModule", { value: true });
 /***************************************************************************************************
  * BROWSER POLYFILLS
  */
@@ -5739,7 +5736,7 @@ __webpack_require__.r(__webpack_exports__);
 // import 'core-js/es6/reflect';
 /** Evergreen browsers require these. **/
 // Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
-
+__webpack_require__(/*! core-js/es7/reflect */ "./node_modules/core-js/es7/reflect.js");
 /**
  * Web Animations `@angular/platform-browser/animations`
  * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
@@ -5761,7 +5758,7 @@ __webpack_require__.r(__webpack_exports__);
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
- // Included with Angular CLI.
+__webpack_require__(/*! zone.js/dist/zone */ "./node_modules/zone.js/dist/zone.js"); // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */

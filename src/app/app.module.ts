@@ -31,6 +31,7 @@ import { LoaderInterceptor } from './core/loader-interceptor';
 
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: '/home-page', pathMatch: 'full' },
   { path: 'home-page', component: HomePageComponent, canActivate: [CanActivateViaAuthGuard] },
   { path: 'products', component: ProductComponent , canActivate: [CanActivateViaAuthGuard]},
   { path: 'login', component: LoginComponent },

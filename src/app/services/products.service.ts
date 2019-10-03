@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { AuthService } from '../core/auth.service';
+import { environment } from 'src/environments/environment';
 
-const endpoint = 'https://ripleytestapi.herokuapp.com/api';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -25,14 +25,14 @@ export class ProductsService {
 
   getProducts(skus: Array<String>): Observable<any> {
     let token = '';
-    let products_url = `${endpoint}/products/${skus}`;
+    let products_url = `${environment.apiUrl}/products/${skus}`;
     if (this.authService.isLoggedIn){
       const user = JSON.parse(localStorage.getItem('user'));
       //console.log(user);
       token = user.stsTokenManager.accessToken;
       let headers: HttpHeaders = new HttpHeaders();
       httpOptions.headers = headers.append('FIREBASE_AUTH_TOKEN', token);
-      console.log(httpOptions);
+      //console.log(httpOptions);
 
 
     }
@@ -41,7 +41,7 @@ export class ProductsService {
   }
 
   getProductBySku(sku: String): Observable<any> {
-    return this.http.get(`${endpoint}/products/by-id/${sku}`).pipe(
+    return this.http.get(`${environment.apiUrl}/products/by-id/${sku}`).pipe(
       map(this.extractData));
   }
 }

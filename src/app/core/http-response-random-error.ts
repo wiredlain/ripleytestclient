@@ -17,20 +17,11 @@ export class HttpResponseRandomError implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     const random = Math.floor(Math.random() * 100) + 1;
 
-    // if number is less 3 skip logging
     if (random < 15) {
-      console.log('error simulado');
-
-      /*return next.handle(req).pipe(
-
-      );*/
-    let errorMessage = `Error Code: 400\nMessage: error simulado`;
-    return throwError(errorMessage);
+      let errorMessage = `Error Code: 400\nMessage: error simulado`;
+      return throwError(errorMessage);
 
     }
-
-    console.log('no error');
-
     return next.handle(req);
   }
 }

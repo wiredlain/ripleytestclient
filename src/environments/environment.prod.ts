@@ -4,6 +4,7 @@
 
 export const environment = {
   production: true,
+  API_URL: 'https://ripleytestapi.herokuapp.com/api',
   firebase: {
     apiKey: "AIzaSyA5s1Xi5fYf4Sg4ROgh39xTc1X9JNK-0e0",
     authDomain: "pruebaripley-80533.firebaseapp.com",

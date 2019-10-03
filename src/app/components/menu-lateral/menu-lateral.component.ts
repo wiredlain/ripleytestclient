@@ -19,7 +19,7 @@ export class MenuLateralComponent {
     
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService, private cdRef:ChangeDetectorRef) {
     this.isLogged = this.authService.isLoggedIn;
-    console.log(this.isLogged);
+    //console.log(this.isLogged);
     
   }
 
