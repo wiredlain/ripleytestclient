@@ -8,6 +8,7 @@
     "config:prod": "npm run config -- --environment=prod --hmr=true",
     "start": "node server.js",
     "postinstall": "npm run config:prod && ng build --aot --prod",
+    "heroku-postbuild": "npm run config:prod && ng build --configuration=production",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
