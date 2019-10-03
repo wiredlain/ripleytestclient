@@ -12,7 +12,8 @@ const dir = './src/environments';
 const environment = argv.environment;
 const isProd = environment === 'prod';
 const hmr = !!argv.hmr;
-const targetPath = `./src/environments/environment.ts`;
+const fileName = `environment.${argv.environment === 'prod' ? argv.environment : ''}`;
+const targetPath = `./src/environments/${fileName}.ts`;
 const envConfigFile = `
 export const environment = {
   production: ${isProd},
