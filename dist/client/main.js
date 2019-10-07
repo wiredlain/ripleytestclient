@@ -115,14 +115,14 @@ var environment_1 = __webpack_require__(/*! src/environments/environment */ "./s
 var fire_1 = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
 var firestore_1 = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
 var auth_1 = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
-var user_service_1 = __webpack_require__(/*! ./core/user.service */ "./src/app/core/user.service.ts");
-var auth_service_1 = __webpack_require__(/*! ./core/auth.service */ "./src/app/core/auth.service.ts");
 var login_component_1 = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
 var forms_1 = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var can_activate_via_auth_guard_1 = __webpack_require__(/*! ./core/can-activate-via-auth.guard */ "./src/app/core/can-activate-via-auth.guard.ts");
 var logout_component_1 = __webpack_require__(/*! ./components/logout/logout.component */ "./src/app/components/logout/logout.component.ts");
 var loader_component_1 = __webpack_require__(/*! ./components/shared/loader/loader.component */ "./src/app/components/shared/loader/loader.component.ts");
 var loader_service_1 = __webpack_require__(/*! ./services/loader.service */ "./src/app/services/loader.service.ts");
+var auth_service_1 = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
+var user_service_1 = __webpack_require__(/*! ./services/user.service */ "./src/app/services/user.service.ts");
 var appRoutes = [
     { path: '', redirectTo: '/home-page', pathMatch: 'full' },
     { path: 'home-page', component: home_page_component_1.HomePageComponent, canActivate: [can_activate_via_auth_guard_1.CanActivateViaAuthGuard] },
@@ -278,9 +278,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var auth_service_1 = __webpack_require__(/*! ../../core/auth.service */ "./src/app/core/auth.service.ts");
 var router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var forms_1 = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+var auth_service_1 = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
 var LoginComponent = /** @class */ (function () {
     function LoginComponent(authService, router, fb) {
         this.authService = authService;
@@ -322,7 +322,6 @@ var LoginComponent = /** @class */ (function () {
             .then(function (res) {
             _this.router.navigate(['/products']);
         }, function (err) {
-            console.log(err);
             _this.errorMessage = err.message;
         });
     };
@@ -374,7 +373,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var auth_service_1 = __webpack_require__(/*! ../../core/auth.service */ "./src/app/core/auth.service.ts");
+var auth_service_1 = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
 var router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var LogoutComponent = /** @class */ (function () {
     function LogoutComponent(_authService, router) {
@@ -442,7 +441,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var layout_1 = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
 var operators_1 = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-var auth_service_1 = __webpack_require__(/*! ../../core/auth.service */ "./src/app/core/auth.service.ts");
+var auth_service_1 = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
 var MenuLateralComponent = /** @class */ (function () {
     function MenuLateralComponent(breakpointObserver, authService, cdRef) {
         this.breakpointObserver = breakpointObserver;
@@ -452,14 +451,12 @@ var MenuLateralComponent = /** @class */ (function () {
         this.isHandset$ = this.breakpointObserver.observe(layout_1.Breakpoints.Handset)
             .pipe(operators_1.map(function (result) { return result.matches; }));
         this.isLogged = this.authService.isLoggedIn;
-        console.log(this.isLogged);
     }
     MenuLateralComponent.prototype.ngAfterContentChecked = function () {
         this.cdRef.detectChanges();
     };
     MenuLateralComponent.prototype.ngAfterViewInit = function () {
         this.isLogged = this.authService.isLoggedIn;
-        //this.cdRef.detectChanges();
     };
     MenuLateralComponent = __decorate([
         core_1.Component({
@@ -631,10 +628,55 @@ exports.LoaderComponent = LoaderComponent;
 
 /***/ }),
 
-/***/ "./src/app/core/auth.service.ts":
-/*!**************************************!*\
-  !*** ./src/app/core/auth.service.ts ***!
-  \**************************************/
+/***/ "./src/app/core/can-activate-via-auth.guard.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/core/can-activate-via-auth.guard.ts ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var auth_service_1 = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+var CanActivateViaAuthGuard = /** @class */ (function () {
+    function CanActivateViaAuthGuard(router, authService) {
+        this.router = router;
+        this.authService = authService;
+    }
+    CanActivateViaAuthGuard.prototype.canActivate = function () {
+        if (!this.authService.isLoggedIn) {
+            this.router.navigate(['/login']);
+            return false;
+        }
+        return true;
+    };
+    CanActivateViaAuthGuard = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [router_1.Router, auth_service_1.AuthService])
+    ], CanActivateViaAuthGuard);
+    return CanActivateViaAuthGuard;
+}());
+exports.CanActivateViaAuthGuard = CanActivateViaAuthGuard;
+
+
+/***/ }),
+
+/***/ "./src/app/services/auth.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/auth.service.ts ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -787,120 +829,6 @@ exports.AuthService = AuthService;
 
 /***/ }),
 
-/***/ "./src/app/core/can-activate-via-auth.guard.ts":
-/*!*****************************************************!*\
-  !*** ./src/app/core/can-activate-via-auth.guard.ts ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-var auth_service_1 = __webpack_require__(/*! ./auth.service */ "./src/app/core/auth.service.ts");
-var CanActivateViaAuthGuard = /** @class */ (function () {
-    function CanActivateViaAuthGuard(router, authService) {
-        this.router = router;
-        this.authService = authService;
-    }
-    CanActivateViaAuthGuard.prototype.canActivate = function () {
-        // If the user is not logged in we'll send them back to the home page
-        if (!this.authService.isLoggedIn) {
-            console.log('No estás logueado');
-            this.router.navigate(['/login']);
-            return false;
-        }
-        else {
-            console.log(this.router.url);
-            //if (this.router.url)
-        }
-        return true;
-    };
-    CanActivateViaAuthGuard = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [router_1.Router, auth_service_1.AuthService])
-    ], CanActivateViaAuthGuard);
-    return CanActivateViaAuthGuard;
-}());
-exports.CanActivateViaAuthGuard = CanActivateViaAuthGuard;
-
-
-/***/ }),
-
-/***/ "./src/app/core/user.service.ts":
-/*!**************************************!*\
-  !*** ./src/app/core/user.service.ts ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var firestore_1 = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
-var auth_1 = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
-var firebase = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-var UserService = /** @class */ (function () {
-    function UserService(db, afAuth) {
-        this.db = db;
-        this.afAuth = afAuth;
-    }
-    UserService.prototype.getCurrentUser = function () {
-        return new Promise(function (resolve, reject) {
-            firebase.auth().onAuthStateChanged(function (user) {
-                if (user) {
-                    resolve(user);
-                }
-                else {
-                    reject('No user logged in');
-                }
-            });
-        });
-    };
-    UserService.prototype.updateCurrentUser = function (value) {
-        return new Promise(function (resolve, reject) {
-            var user = firebase.auth().currentUser;
-            user.updateProfile({
-                displayName: value.name,
-                photoURL: user.photoURL
-            }).then(function (res) {
-                resolve(res);
-            }, function (err) { return reject(err); });
-        });
-    };
-    UserService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [firestore_1.AngularFirestore,
-            auth_1.AngularFireAuth])
-    ], UserService);
-    return UserService;
-}());
-exports.UserService = UserService;
-
-
-/***/ }),
-
 /***/ "./src/app/services/loader.service.ts":
 /*!********************************************!*\
   !*** ./src/app/services/loader.service.ts ***!
@@ -961,7 +889,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var http_1 = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var operators_1 = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-var auth_service_1 = __webpack_require__(/*! ../core/auth.service */ "./src/app/core/auth.service.ts");
+var auth_service_1 = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
 var environment_1 = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 var httpOptions = {
     headers: new http_1.HttpHeaders({
@@ -986,7 +914,7 @@ var ProductsService = /** @class */ (function () {
             token = user.stsTokenManager.accessToken;
             var headers = new http_1.HttpHeaders();
             httpOptions.headers = headers.append('FIREBASE_AUTH_TOKEN', token);
-            console.log(httpOptions);
+            //console.log(httpOptions);
         }
         return this.http.get(products_url, httpOptions).pipe(operators_1.map(this.extractData));
     };
@@ -1006,6 +934,69 @@ exports.ProductsService = ProductsService;
 
 /***/ }),
 
+/***/ "./src/app/services/user.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/user.service.ts ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var firestore_1 = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+var auth_1 = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+var firebase = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
+var UserService = /** @class */ (function () {
+    function UserService(db, afAuth) {
+        this.db = db;
+        this.afAuth = afAuth;
+    }
+    UserService.prototype.getCurrentUser = function () {
+        return new Promise(function (resolve, reject) {
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    resolve(user);
+                }
+                else {
+                    reject('No user logged in');
+                }
+            });
+        });
+    };
+    UserService.prototype.updateCurrentUser = function (value) {
+        return new Promise(function (resolve, reject) {
+            var user = firebase.auth().currentUser;
+            user.updateProfile({
+                displayName: value.name,
+                photoURL: user.photoURL
+            }).then(function (res) {
+                resolve(res);
+            }, function (err) { return reject(err); });
+        });
+    };
+    UserService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [firestore_1.AngularFirestore,
+            auth_1.AngularFireAuth])
+    ], UserService);
+    return UserService;
+}());
+exports.UserService = UserService;
+
+
+/***/ }),
+
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -1017,7 +1008,7 @@ exports.ProductsService = ProductsService;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.environment = {
-    production: false,
+    production: true,
     hmr: false,
     apiUrl: 'http://localhost:8000/api',
     firebase: {

@@ -1,8 +1,8 @@
 import { Component, ChangeDetectorRef,  } from '@angular/core';
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AuthService } from '../../core/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-menu-lateral',
@@ -19,17 +19,15 @@ export class MenuLateralComponent {
     
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService, private cdRef:ChangeDetectorRef) {
     this.isLogged = this.authService.isLoggedIn;
-    //console.log(this.isLogged);
-    
   }
 
 
   ngAfterContentChecked() {
+    this.isLogged = this.authService.isLoggedIn
     this.cdRef.detectChanges();
   }
 
   ngAfterViewInit() {
       this.isLogged = this.authService.isLoggedIn
-    //this.cdRef.detectChanges();
   }
 }

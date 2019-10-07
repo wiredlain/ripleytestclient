@@ -6,11 +6,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule, MatInputModule } from '@angular/material';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
 import { ProductComponent } from './components/product/product.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeCLP from '@angular/common/locales/es-CL';
 import { DeviceDetectorModule } from 'ngx-device-detector';
@@ -18,15 +18,14 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { UserService } from './core/user.service';
-import { AuthService } from './core/auth.service';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 import { CanActivateViaAuthGuard } from './core/can-activate-via-auth.guard';
 import { LogoutComponent } from './components/logout/logout.component';
 import { LoaderComponent } from './components/shared/loader/loader.component';
 import { LoaderService } from './services/loader.service';
-import { LoaderInterceptor } from './core/loader-interceptor';
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
 
 
 
@@ -55,6 +54,7 @@ registerLocaleData(localeCLP, 'es-CL');
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
+    MatInputModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,

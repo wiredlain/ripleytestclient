@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../core/auth.service'
-import { Router, Params } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'page-login',
@@ -16,9 +17,11 @@ export class LoginComponent {
   constructor(
     public authService: AuthService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private titleService: Title
   ) {
     this.createForm();
+    this.titleService.setTitle("Login");
   }
 
   createForm() {
@@ -49,12 +52,11 @@ export class LoginComponent {
     })
   }
 
-  tryLogin(value){
+  tryLogin(value: any){
     this.authService.doLogin(value)
     .then(res => {
       this.router.navigate(['/products']);
     }, err => {
-      //console.log(err);
       this.errorMessage = err.message;
     })
   }

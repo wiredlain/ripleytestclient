@@ -4,6 +4,7 @@ import { ProductsService } from '../../services/products.service';
 import { retryWhen } from 'rxjs/operators';
 import { interval } from 'rxjs';
 import { LoaderService } from 'src/app/services/loader.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product',
@@ -14,9 +15,10 @@ export class ProductComponent implements OnInit {
 
   products:any = [];
 
-  constructor(public rest:ProductsService, private route: ActivatedRoute, private router: Router, private loaderService: LoaderService) { }
+  constructor(public rest:ProductsService, private route: ActivatedRoute, private router: Router, private loaderService: LoaderService, private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle("Productos");
     this.getProducts();
   }
 

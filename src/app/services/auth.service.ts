@@ -4,7 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { Router } from "@angular/router";
 import { AngularFirestoreDocument, AngularFirestore } from "@angular/fire/firestore";
-import { User } from "./user.model";
+import { User } from "../core/user.model";
 
 @Injectable()
 export class AuthService {

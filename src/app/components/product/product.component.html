@@ -5,9 +5,7 @@
       <mat-card-title><h3>DSCTO: {{p.prices.discountPercentage}}%</h3></mat-card-title>
       <mat-card-subtitle>{{p.prices.listPrice | currency:'CLP':'symbol-narrow' }}</mat-card-subtitle>
     </mat-card-header>
-    <!--<a routerLink="/product-details/{{p.partNumber}}">-->
-      <img mat-card-image src="{{p.fullImage}}" alt="Photo of a Shiba Inu">
-    <!--</a>-->
+    <img mat-card-image src="{{p.fullImage}}" alt="Photo of a Shiba Inu">
     <mat-card-content>
       <p>
         <span [innerHTML]="p.shortDescription"></span>
