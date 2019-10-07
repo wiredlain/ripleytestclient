@@ -60,18 +60,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.title = 'client';
+    function AppComponent(titleService) {
+        this.titleService = titleService;
+        this.title = 'Test Ripley - Home';
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.titleService.setTitle(this.title);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [platform_browser_1.Title])
     ], AppComponent);
     return AppComponent;
 }());
@@ -151,6 +160,7 @@ var AppModule = /** @class */ (function () {
                 animations_1.BrowserAnimationsModule,
                 layout_1.LayoutModule,
                 material_1.MatToolbarModule,
+                material_1.MatInputModule,
                 material_1.MatButtonModule,
                 material_1.MatSidenavModule,
                 material_1.MatIconModule,
@@ -254,7 +264,7 @@ exports.HomePageComponent = HomePageComponent;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 class=\"header\">Login with Firebase or Social Providers</h1>\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-6 col-md-offset-3\">\n      <form [formGroup]=\"loginForm\">\n        <div class=\"form-group\">\n          <label>Email address</label>\n          <input type=\"email\" formControlName=\"email\" class=\"form-control\">\n        </div>\n        <div class=\"form-group\">\n          <label>Password</label>\n          <input type=\"password\" class=\"form-control\" formControlName=\"password\">\n          <label class=\"error\">{{errorMessage}}</label>\n        </div>\n        <button type=\"submit\" (click)=\"tryLogin(loginForm.value)\" class=\"btn btn-default\">Login</button>\n      </form>\n    </div>\n  </div>\n  <!--\n  <div class=\"row\">\n    <div class=\"col-md-4 col-md-offset-4\">\n      <button type=\"button\" class=\"btn btn-primary btn-block\" (click)=\"tryFacebookLogin()\">Login with Facebook</button>\n    </div>\n  </div>\n  -->\n  <div class=\"row\">\n    <div class=\"col-md-4 col-md-offset-4\">\n      <button type=\"button\" class=\"btn btn-danger btn-block\" (click)=\"tryGoogleLogin()\">Login with Google</button>\n    </div>\n  </div>\n  <!--\n  <div class=\"row\">\n    <div class=\"col-md-4 col-md-offset-4\">\n      <button type=\"button\" class=\"btn btn-info btn-block\" (click)=\"tryTwitterLogin()\">Login with Twitter</button>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-4 col-md-offset-4\">\n      <p>No account yet? <a href=\"/register\">Create an account</a></p>\n    </div>\n  </div>-->\n</div>\n"
+module.exports = "<mat-card class=\"example-card\">\n  <mat-card-header>\n    <mat-card-title>Login</mat-card-title>\n  </mat-card-header>\n  <mat-card-content>\n    <form class=\"example-form\" [formGroup]=\"loginForm\">\n      <table class=\"example-full-width\" cellspacing=\"0\">\n        <tr>\n          <td>\n            <mat-form-field class=\"example-full-width\">\n                <input placeholder=\"Email\" matInput type=\"email\" formControlName=\"email\" class=\"form-control\" required>\n            </mat-form-field>\n          </td>\n        </tr>\n        <tr>\n        <td><mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Password\" type=\"password\" formControlName=\"password\" required>\n          <label class=\"error\">{{errorMessage}}</label>\n        </mat-form-field></td>\n      </tr></table>\n    </form>\n  </mat-card-content>\n  <mat-card-actions>\n    <button mat-raised-button (click)=\"tryLogin(loginForm.value)\" color=\"primary\">Login</button>\n    <button mat-raised-button (click)=\"tryGoogleLogin()\" color=\"secondary\">Login with Google</button>\n  </mat-card-actions>\n</mat-card>\n"
 
 /***/ }),
 
@@ -281,13 +291,16 @@ var core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/c
 var router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var forms_1 = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var auth_service_1 = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(authService, router, fb) {
+    function LoginComponent(authService, router, fb, titleService) {
         this.authService = authService;
         this.router = router;
         this.fb = fb;
+        this.titleService = titleService;
         this.errorMessage = '';
         this.createForm();
+        this.titleService.setTitle("Login");
     }
     LoginComponent.prototype.createForm = function () {
         this.loginForm = this.fb.group({
@@ -333,7 +346,8 @@ var LoginComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [auth_service_1.AuthService,
             router_1.Router,
-            forms_1.FormBuilder])
+            forms_1.FormBuilder,
+            platform_browser_1.Title])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -404,7 +418,7 @@ exports.LogoutComponent = LogoutComponent;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".sidenav-container {\n  height: 100%;\n}\n\n.sidenav {\n  width: 200px;\n}\n\n.mat-toolbar.mat-primary {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n}\n"
+module.exports = ".sidenav-container {\n  height: 100%;\n}\n\n.sidenav {\n  width: 200px;\n}\n\n.mat-toolbar.mat-primary {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n}\n\nmat-toolbar img {\n  max-width: 30%;\n}"
 
 /***/ }),
 
@@ -415,7 +429,7 @@ module.exports = ".sidenav-container {\n  height: 100%;\n}\n\n.sidenav {\n  widt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"sidenav-container\">\n  <mat-sidenav\n    #drawer\n    class=\"sidenav\"\n    fixedInViewport=\"true\"\n    [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\n    [opened]=\"!(isHandset$ | async)\">\n    <mat-toolbar color=\"primary\">Menu</mat-toolbar>\n    <mat-nav-list>\n      <a mat-list-item routerLink=\"/home-page\">HomePage</a>\n      <a mat-list-item routerLink=\"/products\">Productos</a>\n      <a mat-list-item routerLink=\"/login\" *ngIf=\"!isLogged\">\n        Login\n      </a>\n      <a mat-list-item routerLink=\"/logout\" *ngIf=\"isLogged\">\n        Logout\n      </a>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <mat-toolbar color=\"primary\">\n      <button\n        type=\"button\"\n        aria-label=\"Toggle sidenav\"\n        mat-icon-button\n        (click)=\"drawer.toggle()\"\n        *ngIf=\"isHandset$ | async\">\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\n      </button>\n      <span>Listado de Productos</span>\n    </mat-toolbar>\n    <router-outlet></router-outlet>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
+module.exports = "<mat-sidenav-container class=\"sidenav-container\">\n  <mat-sidenav\n    #drawer\n    class=\"sidenav\"\n    fixedInViewport=\"true\"\n    [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\n    [opened]=\"!(isHandset$ | async)\">\n    <mat-toolbar color=\"primary\">\n      <img class=\"logo\" src=\"assets/img/logo.png\">\n    </mat-toolbar>\n    <mat-nav-list>\n      <a mat-list-item routerLink=\"/home-page\">HomePage</a>\n      <a mat-list-item routerLink=\"/products\">Productos</a>\n      <a mat-list-item routerLink=\"/login\" *ngIf=\"!isLogged\">\n        Login\n      </a>\n      <a mat-list-item routerLink=\"/logout\" *ngIf=\"isLogged\">\n        Logout\n      </a>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <mat-toolbar color=\"primary\">\n      <button\n        type=\"button\"\n        aria-label=\"Toggle sidenav\"\n        mat-icon-button\n        (click)=\"drawer.toggle()\"\n        *ngIf=\"isHandset$ | async\">\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\n      </button>\n    </mat-toolbar>\n    <router-outlet></router-outlet>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
 
 /***/ }),
 
@@ -453,6 +467,7 @@ var MenuLateralComponent = /** @class */ (function () {
         this.isLogged = this.authService.isLoggedIn;
     }
     MenuLateralComponent.prototype.ngAfterContentChecked = function () {
+        this.isLogged = this.authService.isLoggedIn;
         this.cdRef.detectChanges();
     };
     MenuLateralComponent.prototype.ngAfterViewInit = function () {
@@ -491,7 +506,7 @@ module.exports = ".container {\n  display: flex;\n\tflex-direction: row;\n\tflex
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Listado de Productos</h2>\n<div class=\"container\">\n  <mat-card class=\"example-card\" *ngFor=\"let p of products; let i=index;\">\n    <mat-card-header>\n      <mat-card-title><h3>DSCTO: {{p.prices.discountPercentage}}%</h3></mat-card-title>\n      <mat-card-subtitle>{{p.prices.listPrice | currency:'CLP':'symbol-narrow' }}</mat-card-subtitle>\n    </mat-card-header>\n    <!--<a routerLink=\"/product-details/{{p.partNumber}}\">-->\n      <img mat-card-image src=\"{{p.fullImage}}\" alt=\"Photo of a Shiba Inu\">\n    <!--</a>-->\n    <mat-card-content>\n      <p>\n        <span [innerHTML]=\"p.shortDescription\"></span>\n      </p>\n    </mat-card-content>\n    <mat-card-actions>\n      <button mat-button>LIKE</button>\n      <button mat-button>SHARE</button>\n    </mat-card-actions>\n  </mat-card>\n</div>\n"
+module.exports = "<h2>Listado de Productos</h2>\n<div class=\"container\">\n  <mat-card class=\"example-card\" *ngFor=\"let p of products; let i=index;\">\n    <mat-card-header>\n      <mat-card-title><h3>DSCTO: {{p.prices.discountPercentage}}%</h3></mat-card-title>\n      <mat-card-subtitle>{{p.prices.listPrice | currency:'CLP':'symbol-narrow' }}</mat-card-subtitle>\n    </mat-card-header>\n    <img mat-card-image src=\"{{p.fullImage}}\" alt=\"Photo of a Shiba Inu\">\n    <mat-card-content>\n      <p>\n        <span [innerHTML]=\"p.shortDescription\"></span>\n      </p>\n    </mat-card-content>\n    <mat-card-actions>\n      <button mat-button>LIKE</button>\n      <button mat-button>SHARE</button>\n    </mat-card-actions>\n  </mat-card>\n</div>\n"
 
 /***/ }),
 
@@ -520,15 +535,18 @@ var products_service_1 = __webpack_require__(/*! ../../services/products.service
 var operators_1 = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var rxjs_1 = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var loader_service_1 = __webpack_require__(/*! src/app/services/loader.service */ "./src/app/services/loader.service.ts");
+var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 var ProductComponent = /** @class */ (function () {
-    function ProductComponent(rest, route, router, loaderService) {
+    function ProductComponent(rest, route, router, loaderService, titleService) {
         this.rest = rest;
         this.route = route;
         this.router = router;
         this.loaderService = loaderService;
+        this.titleService = titleService;
         this.products = [];
     }
     ProductComponent.prototype.ngOnInit = function () {
+        this.titleService.setTitle("Productos");
         this.getProducts();
     };
     ProductComponent.prototype.getProducts = function () {
@@ -553,7 +571,7 @@ var ProductComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./product.component.html */ "./src/app/components/product/product.component.html"),
             styles: [__webpack_require__(/*! ./product.component.css */ "./src/app/components/product/product.component.css")]
         }),
-        __metadata("design:paramtypes", [products_service_1.ProductsService, router_1.ActivatedRoute, router_1.Router, loader_service_1.LoaderService])
+        __metadata("design:paramtypes", [products_service_1.ProductsService, router_1.ActivatedRoute, router_1.Router, loader_service_1.LoaderService, platform_browser_1.Title])
     ], ProductComponent);
     return ProductComponent;
 }());
